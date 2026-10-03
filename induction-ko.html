@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>전자기 유도와 교류</title>
+<title>유도와 교류</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
@@ -134,6 +134,11 @@ svg .gridl{stroke:var(--grid);stroke-width:1}
 .rows{display:flex;flex-direction:column;gap:4px;font-size:15px}
 .ctl.off{opacity:.4;pointer-events:none}
 .btnrow{display:flex;gap:6px;flex-wrap:wrap}
+.sqrt{display:inline-block;position:relative;padding-left:.6em;margin-left:.06em;white-space:nowrap}
+.sqrt::before{content:"";position:absolute;left:0;top:0;bottom:.02em;width:.63em;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 24' preserveAspectRatio='none'%3E%3Cpath d='M0 14.2L3.4 12.3L6.9 20.1L11 0H12V1.5H11.95L7.5 23.6H6.3L2.8 15.3L.7 16.3Z'/%3E%3C/svg%3E") no-repeat 0 0/100% 100%;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 24' preserveAspectRatio='none'%3E%3Cpath d='M0 14.2L3.4 12.3L6.9 20.1L11 0H12V1.5H11.95L7.5 23.6H6.3L2.8 15.3L.7 16.3Z'/%3E%3C/svg%3E") no-repeat 0 0/100% 100%}
+.sqrt>span{display:inline-block;border-top:.075em solid currentColor;padding:.1em .1em 0 .05em;line-height:1.15}
+.ss{display:inline-block;vertical-align:-.3em;line-height:1;font-size:.72em;margin-left:.03em;text-align:left}
+.ss>sup,.ss>sub{display:block;vertical-align:0;font-size:1em;line-height:1.08;position:static}
 </style>
 </head>
 <body>
@@ -191,19 +196,19 @@ svg .gridl{stroke:var(--grid);stroke-width:1}
 
 <section id="s7"><h2><span class="n">7</span><span data-i18n="h7"></span></h2>
   <div class="prose"><p data-i18n="p7a"></p><p data-i18n="p7b"></p></div>
-  <div class="key"><span><i>L</i><span class="frac"><span>d<sup>2</sup><i>q</i></span><span>d<i>t</i><sup>2</sup></span></span> + <span class="frac"><span><i>q</i></span><span><i>C</i></span></span> = 0</span><span><i>ω</i> = <span class="frac"><span>1</span><span>√<i>LC</i></span></span></span><span><i>U</i><sub>E</sub> + <i>U</i><sub>B</sub> = <span class="frac"><span><i>Q</i><sup>2</sup></span><span>2<i>C</i></span></span></span><span><i>q</i> = <i>Qe</i><sup>−<i>Rt</i>/2<i>L</i></sup> cos(<i>ω′t</i> + <i>φ</i>)</span><span><i>ω′</i> = √(<i>ω</i><sup>2</sup> − (<i>R</i>/2<i>L</i>)<sup>2</sup>)</span></div>
+  <div class="key"><span><i>L</i><span class="frac"><span>d<sup>2</sup><i>q</i></span><span>d<i>t</i><sup>2</sup></span></span> + <span class="frac"><span><i>q</i></span><span><i>C</i></span></span> = 0</span><span><i>ω</i> = <span class="frac"><span>1</span><span><span class='sqrt'><span><i>LC</i></span></span></span></span></span><span><i>U</i><sub>E</sub> + <i>U</i><sub>B</sub> = <span class="frac"><span><i>Q</i><sup>2</sup></span><span>2<i>C</i></span></span></span><span><i>q</i> = <i>Qe</i><sup>−<i>Rt</i>/2<i>L</i></sup> cos(<i>ω′t</i> + <i>φ</i>)</span><span><i>ω′</i> = <span class='sqrt'><span><i>ω</i><sup>2</sup> − (<i>R</i>/2<i>L</i>)<sup>2</sup></span></span></span></div>
   <div class="sim"><div class="viz"><svg id="v7" viewBox="0 0 440 230" role="img" aria-label="LC or RLC circuit"></svg><div class="bars" id="bars7"></div><svg id="v7p" viewBox="0 0 440 250" role="img" aria-label="Charge and energies versus time"></svg><div class="small" data-i18n="slowmo"></div></div><div class="controls" id="c7"></div></div>
 </section>
 
 <section id="s8"><h2><span class="n">8</span><span data-i18n="h8"></span></h2>
   <div class="prose"><p data-i18n="p8a"></p><p data-i18n="p8b"></p><p data-i18n="p8c"></p></div>
-  <div class="key"><span>ℰ = ℰ<sub>m</sub> sin <i>ω</i><sub>d</sub><i>t</i></span><span><i>i</i> = <i>I</i> sin(<i>ω</i><sub>d</sub><i>t</i> − <i>φ</i>)</span><span><i>X</i><sub>L</sub> = <i>ω</i><sub>d</sub><i>L</i></span><span><i>X</i><sub>C</sub> = <span class="frac"><span>1</span><span><i>ω</i><sub>d</sub><i>C</i></span></span></span><span><i>Z</i> = √(<i>R</i><sup>2</sup> + (<i>X</i><sub>L</sub> − <i>X</i><sub>C</sub>)<sup>2</sup>)</span><span><i>I</i> = <span class="frac"><span>ℰ<sub>m</sub></span><span><i>Z</i></span></span></span><span>tan <i>φ</i> = <span class="frac"><span><i>X</i><sub>L</sub> − <i>X</i><sub>C</sub></span><span><i>R</i></span></span></span></div>
+  <div class="key"><span>ℰ = ℰ<sub>m</sub> sin <i>ω</i><sub>d</sub><i>t</i></span><span><i>i</i> = <i>I</i> sin(<i>ω</i><sub>d</sub><i>t</i> − <i>φ</i>)</span><span><i>X</i><sub>L</sub> = <i>ω</i><sub>d</sub><i>L</i></span><span><i>X</i><sub>C</sub> = <span class="frac"><span>1</span><span><i>ω</i><sub>d</sub><i>C</i></span></span></span><span><i>Z</i> = <span class='sqrt'><span><i>R</i><sup>2</sup> + (<i>X</i><sub>L</sub> − <i>X</i><sub>C</sub>)<sup>2</sup></span></span></span><span><i>I</i> = <span class="frac"><span>ℰ<sub>m</sub></span><span><i>Z</i></span></span></span><span>tan <i>φ</i> = <span class="frac"><span><i>X</i><sub>L</sub> − <i>X</i><sub>C</sub></span><span><i>R</i></span></span></span></div>
   <div class="sim"><div class="viz"><svg id="v8" viewBox="0 0 440 290" role="img" aria-label="Rotating phasor diagram"></svg><svg id="v8w" viewBox="0 0 440 170" role="img" aria-label="Emf and current versus time"></svg><svg id="v8r" viewBox="0 0 440 170" role="img" aria-label="Resonance curve"></svg></div><div class="controls" id="c8"></div></div>
 </section>
 
 <section id="s9"><h2><span class="n">9</span><span data-i18n="h9"></span></h2>
   <div class="prose"><p data-i18n="p9"></p></div>
-  <div class="key"><span><i>P</i><sub>avg</sub> = ½<i>I</i><sup>2</sup><i>R</i> = <i>I</i><sub>rms</sub><sup>2</sup><i>R</i></span><span><i>I</i><sub>rms</sub> = <span class="frac"><span><i>I</i></span><span>√2</span></span></span><span><i>P</i><sub>avg</sub> = ℰ<sub>rms</sub><i>I</i><sub>rms</sub> cos <i>φ</i></span></div>
+  <div class="key"><span><i>P</i><sub>avg</sub> = ½<i>I</i><sup>2</sup><i>R</i> = <i>I</i><span class='ss'><sup>2</sup><sub>rms</sub></span><i>R</i></span><span><i>I</i><sub>rms</sub> = <span class="frac"><span><i>I</i></span><span><span class='sqrt'><span>2</span></span></span></span></span><span><i>P</i><sub>avg</sub> = ℰ<sub>rms</sub><i>I</i><sub>rms</sub> cos <i>φ</i></span></div>
   <div class="sim one"><div class="viz"><svg id="v9" viewBox="0 0 440 210" role="img" aria-label="Instantaneous power and its average"></svg><div class="small" data-i18n="uses8"></div></div><div class="controls" id="c9"></div></div>
   <div class="aside"><div class="boxed"><h3 data-i18n="homeH"></h3><div data-i18n="homeP"></div></div><div class="scrawl mag" data-i18n="n9"></div></div>
 </section>
@@ -222,7 +227,7 @@ const I18N={
 ko:{
  nav:["패러데이 법칙","렌츠 법칙","유도와 에너지","유도용량","RL 회로","상호유도","LC 진동","교류 RLC","교류의 일률","변압기"],
  credit:"<b>이상훈(Sang Hoon Lee)</b>의 강의 노트를 바탕으로 <b>Claude Opus 5.5</b>가 만들었습니다.",
- title:"전자기 유도와 교류",
+ title:"유도와 교류",
  subtitle:"전자기 유도, 유도용량, 전자기 진동, 교류 회로의 기본 개념을 직접 만져 보는 인터랙티브 데모입니다. 조절 막대를 움직이면 화면의 모든 값이 바로 다시 계산됩니다.",
  h1:"패러데이의 유도 법칙",
  p1a:"전류가 자기장을 만든다는 것을 배웠습니다. 그렇다면 자기장이 전류를 만들 수도 있을까요? 실험적 발견: 자석이 고리 근처에서 움직일 때 고리에 전류가 생기고, 운동이 빠를수록 더 큰 전류가 생깁니다. 자석의 움직임이 기전력(유도기전력)의 역할을 해서 유도전류를 흐르게 하는 것입니다.",
@@ -266,27 +271,27 @@ ko:{
  rI1:"현재 <i>i</i><sub>1</sub>",rDi1:"d<i>i</i><sub>1</sub>/d<i>t</i>",rE2:"ℰ<sub>2</sub> = −<i>M</i> d<i>i</i><sub>1</sub>/d<i>t</i>",
  pI1:"코일 1의 전류 i₁ (A)",pE2:"코일 2의 기전력 ℰ₂ (V)",coil1:"코일 1",coil2:"코일 2",
  h7:"전자기 진동: LC 회로와 RLC 회로",
- p7a:"충전된 축전기를 유도기에 연결하면 고리 규칙은 <i>L</i> d<sup>2</sup><i>q</i>/d<i>t</i><sup>2</sup> + <i>q</i>/<i>C</i> = 0입니다. 두 번 미분하면 (−상수) × 자기 자신인 함수가 필요하므로 일반해는 <i>q</i> = <i>Q</i> cos(<i>ωt</i> + <i>φ</i>)이고(위상 <i>φ</i>는 초기조건에 따라 결정), <i>i</i> = −<i>ωQ</i> sin(<i>ωt</i> + <i>φ</i>)입니다. 대입하면 <i>ω</i> = 1/√(<i>LC</i>)로, LC 회로의 각진동수이며 초당 위상이 얼마나 바뀌는가를 나타냅니다(한 주기에 2π). 에너지는 축전기의 전기장 <i>U</i><sub>E</sub> = (<i>Q</i><sup>2</sup>/2<i>C</i>) cos<sup>2</sup>(<i>ωt</i> + <i>φ</i>)와 유도기의 자기장 <i>U</i><sub>B</sub> = (<i>Q</i><sup>2</sup>/2<i>C</i>) sin<sup>2</sup>(<i>ωt</i> + <i>φ</i>)를 오갑니다. 합은 언제나 <i>Q</i><sup>2</sup>/2<i>C</i>로, 에너지 보존!",
+ p7a:"충전된 축전기를 유도기에 연결하면 고리 규칙은 <i>L</i> d<sup>2</sup><i>q</i>/d<i>t</i><sup>2</sup> + <i>q</i>/<i>C</i> = 0입니다. 두 번 미분하면 (−상수) × 자기 자신인 함수가 필요하므로 일반해는 <i>q</i> = <i>Q</i> cos(<i>ωt</i> + <i>φ</i>)이고(위상 <i>φ</i>는 초기조건에 따라 결정), <i>i</i> = −<i>ωQ</i> sin(<i>ωt</i> + <i>φ</i>)입니다. 대입하면 <i>ω</i> = 1/<span class='sqrt'><span><i>LC</i></span></span>로, LC 회로의 각진동수이며 초당 위상이 얼마나 바뀌는가를 나타냅니다(한 주기에 2π). 에너지는 축전기의 전기장 <i>U</i><sub>E</sub> = (<i>Q</i><sup>2</sup>/2<i>C</i>) cos<sup>2</sup>(<i>ωt</i> + <i>φ</i>)와 유도기의 자기장 <i>U</i><sub>B</sub> = (<i>Q</i><sup>2</sup>/2<i>C</i>) sin<sup>2</sup>(<i>ωt</i> + <i>φ</i>)를 오갑니다. 합은 언제나 <i>Q</i><sup>2</sup>/2<i>C</i>로, 에너지 보존!",
  p7b:"저항이 추가되면 <i>R</i> 양쪽에서 <i>iR</i>만큼 퍼텐셜차가 생기므로 <i>L</i> d<sup>2</sup><i>q</i>/d<i>t</i><sup>2</sup> + <i>R</i> d<i>q</i>/d<i>t</i> + <i>q</i>/<i>C</i> = 0입니다. 해 <i>q</i> = <i>Qe</i><sup>−<i>Rt</i>/2<i>L</i></sup> cos(<i>ω′t</i> + <i>φ</i>)는 진폭이 <i>Qe</i><sup>−<i>Rt</i>/2<i>L</i></sup>로 점점 작아지는 감쇠진동입니다. 축전기의 전기 에너지 (<i>Q</i><sup>2</sup>/2<i>C</i>)<i>e</i><sup>−<i>Rt</i>/<i>L</i></sup> cos<sup>2</sup>(<i>ω′t</i> + <i>φ</i>)도 감소해서 결국 사라집니다. 어디로 갔을까요? 저항에서 열에너지로 전환되었습니다.",
  slowmo:"애니메이션은 실제보다 50배 느리게 재생됩니다. 표시되는 값은 모두 실제 값입니다.",
  capC:"전기용량 <i>C</i>",resR7:"저항 <i>R</i> (0이면 순수한 LC)",v0:"축전기의 처음 전압 <i>V</i><sub>0</sub>",recharge:"축전기를 충전한 뒤 놓기",
- rW:"<i>ω</i> = 1/√<i>LC</i>",rW2:"<i>ω′</i> (감쇠)",rT7:"주기 <i>T</i> = 2π/<i>ω</i>",rF7:"진동수 <i>f</i>",overd:"진동 없음 (과감쇠)",
+ rW:"<i>ω</i> = 1/<span class='sqrt'><span><i>LC</i></span></span>",rW2:"<i>ω′</i> (감쇠)",rT7:"주기 <i>T</i> = 2π/<i>ω</i>",rF7:"진동수 <i>f</i>",overd:"진동 없음 (과감쇠)",
  uE:"전기 에너지 <i>U</i><sub>E</sub>",uB:"자기 에너지 <i>U</i><sub>B</sub>",heat:"열로 전환됨",
  pQ7:"전하량 q / Q",pU7:"에너지",
  h8:"교류와 강제 RLC 회로",
  p8a:"열에너지를 보충할 만한 에너지를 외부의 기전력 장치가 공급할 수 있다면 RLC 회로의 진동은 감쇠하지 않습니다. 대부분의 나라에서 에너지는 진동하는 기전력과 전류, 즉 교류(ac)로 공급됩니다. 건전지 같은 직류(dc)와 대비됩니다. 한국은 60 Hz이므로 초당 120번 방향이 바뀝니다. 왜 교류일까요? 전류의 방향이 바뀌면서 도선 주위의 자기장도 방향이 바뀌므로, 패러데이 유도 법칙을 이용하는 변압기로 퍼텐셜차를 올리거나 내릴 수 있기 때문입니다. 외부 자기장 안에서 고리를 회전시키면 주기적으로 변하는 기전력 ℰ = ℰ<sub>m</sub> sin(<i>ω</i><sub>d</sub><i>t</i>)가 유도됩니다. ℰ<sub>m</sub>은 진폭, <i>ω</i><sub>d</sub> = 2π<i>f</i><sub>d</sub>는 강제 각진동수입니다. 전류의 각진동수는 같지만 위상은 일반적으로 다릅니다: <i>i</i> = <i>I</i> sin(<i>ω</i><sub>d</sub><i>t</i> − <i>φ</i>).",
- p8b:"왜 <i>φ</i>만큼의 차이가 생길까요? 직렬 RLC 회로에서 <i>v</i><sub>R</sub> = <i>iR</i>은 <i>i</i>와 위상이 같습니다. 축전기 양끝의 <i>v</i><sub>C</sub> = (1/<i>C</i>)∫<i>i</i> d<i>t</i>는 <i>i</i>보다 90°만큼 뒤처지고, 진폭은 <i>V</i><sub>C</sub> = <i>IX</i><sub>C</sub>이며 <i>X</i><sub>C</sub> = 1/(<i>ω</i><sub>d</sub><i>C</i>)는 용량형 반응저항입니다. 유도기 양끝의 <i>v</i><sub>L</sub> = <i>L</i> d<i>i</i>/d<i>t</i>는 <i>i</i>보다 90° 앞서고, <i>V</i><sub>L</sub> = <i>IX</i><sub>L</sub>, 유도형 반응저항 <i>X</i><sub>L</sub> = <i>ω</i><sub>d</sub><i>L</i>입니다. 회전하는 페이저로 그리면 기전력은 이 세 개의 벡터합입니다: ℰ<sub>m</sub><sup>2</sup> = <i>V</i><sub>R</sub><sup>2</sup> + (<i>V</i><sub>L</sub> − <i>V</i><sub>C</sub>)<sup>2</sup>. 따라서 <i>I</i> = ℰ<sub>m</sub>/<i>Z</i>, 임피던스 <i>Z</i> = √(<i>R</i><sup>2</sup> + (<i>X</i><sub>L</sub> − <i>X</i><sub>C</sub>)<sup>2</sup>), 위상상수 tan <i>φ</i> = (<i>X</i><sub>L</sub> − <i>X</i><sub>C</sub>)/<i>R</i>입니다.",
- p8c:"<i>X</i><sub>L</sub> &gt; <i>X</i><sub>C</sub>이면 <i>φ</i> &gt; 0: 전류가 기전력보다 뒤처집니다(유도형 회로). <i>X</i><sub>C</sub> &gt; <i>X</i><sub>L</sub>이면 <i>φ</i> &lt; 0: 전류가 기전력보다 앞섭니다(용량형 회로). <i>X</i><sub>L</sub> = <i>X</i><sub>C</sub>이면 <i>φ</i> = 0: 전류와 기전력이 같이 갑니다. 이것이 공명이며, 조건은 <i>ω</i><sub>d</sub> = 1/√(<i>LC</i>)입니다. 앞에서 배운 LC 회로의 자연 각진동수와 교류의 강제 각진동수가 같을 때 공명이 일어납니다!",
+ p8b:"왜 <i>φ</i>만큼의 차이가 생길까요? 직렬 RLC 회로에서 <i>v</i><sub>R</sub> = <i>iR</i>은 <i>i</i>와 위상이 같습니다. 축전기 양끝의 <i>v</i><sub>C</sub> = (1/<i>C</i>)∫<i>i</i> d<i>t</i>는 <i>i</i>보다 90°만큼 뒤처지고, 진폭은 <i>V</i><sub>C</sub> = <i>IX</i><sub>C</sub>이며 <i>X</i><sub>C</sub> = 1/(<i>ω</i><sub>d</sub><i>C</i>)는 용량형 반응저항입니다. 유도기 양끝의 <i>v</i><sub>L</sub> = <i>L</i> d<i>i</i>/d<i>t</i>는 <i>i</i>보다 90° 앞서고, <i>V</i><sub>L</sub> = <i>IX</i><sub>L</sub>, 유도형 반응저항 <i>X</i><sub>L</sub> = <i>ω</i><sub>d</sub><i>L</i>입니다. 회전하는 페이저로 그리면 기전력은 이 세 개의 벡터합입니다: ℰ<span class='ss'><sup>2</sup><sub>m</sub></span> = <i>V</i><span class='ss'><sup>2</sup><sub>R</sub></span> + (<i>V</i><sub>L</sub> − <i>V</i><sub>C</sub>)<sup>2</sup>. 따라서 <i>I</i> = ℰ<sub>m</sub>/<i>Z</i>, 임피던스 <i>Z</i> = <span class='sqrt'><span><i>R</i><sup>2</sup> + (<i>X</i><sub>L</sub> − <i>X</i><sub>C</sub>)<sup>2</sup></span></span>, 위상상수 tan <i>φ</i> = (<i>X</i><sub>L</sub> − <i>X</i><sub>C</sub>)/<i>R</i>입니다.",
+ p8c:"<i>X</i><sub>L</sub> &gt; <i>X</i><sub>C</sub>이면 <i>φ</i> &gt; 0: 전류가 기전력보다 뒤처집니다(유도형 회로). <i>X</i><sub>C</sub> &gt; <i>X</i><sub>L</sub>이면 <i>φ</i> &lt; 0: 전류가 기전력보다 앞섭니다(용량형 회로). <i>X</i><sub>L</sub> = <i>X</i><sub>C</sub>이면 <i>φ</i> = 0: 전류와 기전력이 같이 갑니다. 이것이 공명이며, 조건은 <i>ω</i><sub>d</sub> = 1/<span class='sqrt'><span><i>LC</i></span></span>입니다. 앞에서 배운 LC 회로의 자연 각진동수와 교류의 강제 각진동수가 같을 때 공명이 일어납니다!",
  emfm:"진폭 ℰ<sub>m</sub>",fd:"강제 진동수 <i>f</i><sub>d</sub>",indmH:"유도용량 <i>L</i>",toRes:"공명에 맞추기",
- rXL:"<i>X</i><sub>L</sub> = <i>ω</i><sub>d</sub><i>L</i>",rXC:"<i>X</i><sub>C</sub> = 1/<i>ω</i><sub>d</sub><i>C</i>",rZ:"임피던스 <i>Z</i>",rI8:"전류 진폭 <i>I</i>",rPhi8:"위상상수 <i>φ</i>",rF0:"공명 <i>f</i><sub>0</sub> = 1/(2π√<i>LC</i>)",rType:"회로는",
+ rXL:"<i>X</i><sub>L</sub> = <i>ω</i><sub>d</sub><i>L</i>",rXC:"<i>X</i><sub>C</sub> = 1/<i>ω</i><sub>d</sub><i>C</i>",rZ:"임피던스 <i>Z</i>",rI8:"전류 진폭 <i>I</i>",rPhi8:"위상상수 <i>φ</i>",rF0:"공명 <i>f</i><sub>0</sub> = 1/(2π<span class='sqrt'><span><i>LC</i></span></span>)",rType:"회로는",
  inductive:"유도형: 전류가 뒤처짐",capacitive:"용량형: 전류가 앞섬",resonant:"공명: 위상이 같음",
  wTitle:"ℰ (빨강)과 i (초록), 각각 최댓값으로 나눔",rTitle:"강제 진동수에 따른 전류 진폭 I",
  h9:"교류 회로의 일률",
- p9:"축전기의 전기장과 유도기의 자기장에 저장된 에너지는 주기마다 되돌아오지만, 저항에서는 순간적인 비율 <i>P</i> = <i>i</i><sup>2</sup><i>R</i> = <i>I</i><sup>2</sup><i>R</i> sin<sup>2</sup>(<i>ω</i><sub>d</sub><i>t</i> − <i>φ</i>)로 열에너지가 되어 사라집니다. sin<sup>2</sup>의 한 주기 평균은 ½이므로 <i>P</i><sub>avg</sub> = ½<i>I</i><sup>2</sup><i>R</i> = <i>I</i><sub>rms</sub><sup>2</sup><i>R</i>이고, <i>I</i><sub>rms</sub> = <i>I</i>/√2는 제곱평균제곱근(root-mean-square) 값입니다. 제곱하고 평균을 낸 다음 제곱근을 씌운 것이죠(한 주기 동안 그냥 평균을 내면 0). <i>I</i><sub>rms</sub> = ℰ<sub>rms</sub>/<i>Z</i>이고 페이저 삼각형에서 cos <i>φ</i> = <i>R</i>/<i>Z</i>이므로 <i>P</i><sub>avg</sub> = ℰ<sub>rms</sub><i>I</i><sub>rms</sub> cos <i>φ</i>이며, cos <i>φ</i>를 전력인자라 합니다.",
+ p9:"축전기의 전기장과 유도기의 자기장에 저장된 에너지는 주기마다 되돌아오지만, 저항에서는 순간적인 비율 <i>P</i> = <i>i</i><sup>2</sup><i>R</i> = <i>I</i><sup>2</sup><i>R</i> sin<sup>2</sup>(<i>ω</i><sub>d</sub><i>t</i> − <i>φ</i>)로 열에너지가 되어 사라집니다. sin<sup>2</sup>의 한 주기 평균은 ½이므로 <i>P</i><sub>avg</sub> = ½<i>I</i><sup>2</sup><i>R</i> = <i>I</i><span class='ss'><sup>2</sup><sub>rms</sub></span><i>R</i>이고, <i>I</i><sub>rms</sub> = <i>I</i>/<span class='sqrt'><span>2는</span></span> 제곱평균제곱근(root-mean-square) 값입니다. 제곱하고 평균을 낸 다음 제곱근을 씌운 것이죠(한 주기 동안 그냥 평균을 내면 0). <i>I</i><sub>rms</sub> = ℰ<sub>rms</sub>/<i>Z</i>이고 페이저 삼각형에서 cos <i>φ</i> = <i>R</i>/<i>Z</i>이므로 <i>P</i><sub>avg</sub> = ℰ<sub>rms</sub><i>I</i><sub>rms</sub> cos <i>φ</i>이며, cos <i>φ</i>를 전력인자라 합니다.",
  uses8:"8절의 회로를 사용합니다. 주황: 저항의 발열률 i²R. 점선: 전원이 주는 일률 ℰi (반응저항이 에너지를 되돌려 줄 때 음수). 회색 선: 평균.",
- rErms:"ℰ<sub>rms</sub> = ℰ<sub>m</sub>/√2",rIrms:"<i>I</i><sub>rms</sub> = <i>I</i>/√2",rPF:"전력인자 cos <i>φ</i>",rP1:"<i>P</i><sub>avg</sub> = <i>I</i><sub>rms</sub><sup>2</sup><i>R</i>",rP2:"<i>P</i><sub>avg</sub> = ℰ<sub>rms</sub><i>I</i><sub>rms</sub> cos <i>φ</i>",
- homeH:"가정용 220 V",homeP:"가정용 220 V는 rms 값입니다. 퍼텐셜차의 최댓값인 진폭은 220 × √2 ≈ 311 V입니다.",
- n9:"P<sub>avg</sub>를 최대로 하려면 cos φ → 1, 즉 φ → 0, Z → R, X<sub>L</sub> = X<sub>C</sub>. 다시 한번 공명 조건 ω<sub>d</sub> = 1/√LC!",
+ rErms:"ℰ<sub>rms</sub> = ℰ<sub>m</sub>/<span class='sqrt'><span>2</span></span>",rIrms:"<i>I</i><sub>rms</sub> = <i>I</i>/<span class='sqrt'><span>2</span></span>",rPF:"전력인자 cos <i>φ</i>",rP1:"<i>P</i><sub>avg</sub> = <i>I</i><span class='ss'><sup>2</sup><sub>rms</sub></span><i>R</i>",rP2:"<i>P</i><sub>avg</sub> = ℰ<sub>rms</sub><i>I</i><sub>rms</sub> cos <i>φ</i>",
+ homeH:"가정용 220 V",homeP:"가정용 220 V는 rms 값입니다. 퍼텐셜차의 최댓값인 진폭은 220 × <span class='sqrt'><span>2</span></span> ≈ 311 V입니다.",
+ n9:"P<sub>avg</sub>를 최대로 하려면 cos φ → 1, 즉 φ → 0, Z → R, X<sub>L</sub> = X<sub>C</sub>. 다시 한번 공명 조건 ω<sub>d</sub> = 1/<span class='sqrt'><span><i>LC</i></span></span>!",
  h10:"변압기",
  p10a:"교류 회로에 저항만 있으면 cos <i>φ</i> = 1이고, <i>P</i><sub>avg</sub> = ℰ<i>I</i> = <i>IV</i>입니다(rms 기호는 생략). 저항에서 발생하는 열손실이 <i>I</i><sup>2</sup><i>R</i>이므로 발전소의 전기 에너지를 보낼 때는 전류는 낮게, 퍼텐셜은 높게 유지해야 합니다. 가정에서는 안전을 위해 낮은 퍼텐셜(220 V)이 필요하므로 퍼텐셜을 높이거나 낮추는 장치, 변압기가 필요합니다. 이상적인 변압기는 하나의 철심에 감은 수 <i>N</i><sub>p</sub>인 1차 코일과 <i>N</i><sub>s</sub>인 2차 코일로 이루어집니다. 1차 코일의 교류 전류가 철심에 주기적으로 변하는 자기다발 Φ<sub>B</sub>를 만들고, 두 코일이 같은 자기다발을 공유하므로 감은 수당 생기는 기전력 ℰ<sub>turn</sub> = −dΦ<sub>B</sub>/d<i>t</i>가 같습니다. 따라서 <i>V</i><sub>p</sub> = <i>N</i><sub>p</sub>ℰ<sub>turn</sub>, <i>V</i><sub>s</sub> = <i>N</i><sub>s</sub>ℰ<sub>turn</sub>이고 <i>V</i><sub>s</sub> = <i>V</i><sub>p</sub><i>N</i><sub>s</sub>/<i>N</i><sub>p</sub>입니다. <i>N</i><sub>s</sub> &gt; <i>N</i><sub>p</sub>이면 승압 변압기, <i>N</i><sub>s</sub> &lt; <i>N</i><sub>p</sub>이면 강압 변압기입니다.",
  p10b:"이때 에너지는 보존되어야 하므로(손실 없음을 가정) <i>I</i><sub>p</sub><i>V</i><sub>p</sub> = <i>I</i><sub>s</sub><i>V</i><sub>s</sub>, 즉 <i>I</i><sub>s</sub> = <i>I</i><sub>p</sub><i>N</i><sub>p</sub>/<i>N</i><sub>s</sub>로 전류는 감은 수에 반비례합니다. 2차 코일에 저항 <i>R</i>이 있으면 1차 코일 쪽의 발전기가 “느끼는” 등가저항은 <i>R</i><sub>eq</sub> = (<i>N</i><sub>p</sub>/<i>N</i><sub>s</sub>)<sup>2</sup><i>R</i>입니다. 실제로는 <i>N</i><sub>p</sub>, <i>N</i><sub>s</sub>를 조절해 이 값을 맞추면 최대 에너지를 송신할 수 있는데, 이를 임피던스 맞춤이라 합니다(교류에서는 일반적으로 임피던스 <i>Z</i>).",
